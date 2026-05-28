@@ -1,7 +1,29 @@
 [package]
 name = "apm"
-version = "0.1.0"
-edition = "2026"
+version = "2.0.0"
+edition = "2021"
+authors = ["Apex Team"]
+description = "Apex Package Manager - Complete toolchain for the Apex programming language. Run, compile, format, and manage Apex projects with ease"
+repository = "https://github.com/apex-lang/apex"
+homepage = "https://apex-lang.org"
+documentation = "https://docs.apex-lang.org"
+license = "MIT"
+keywords = ["package-manager", "build-tool", "cli", "apex"]
+categories = ["command-line-utilities", "development-tools"]
+
+[[bin]]
+name = "apm"
+path = "src/main.rs"
 
 [dependencies]
 apex-core = { path = "../apex-core" }
+
+[dev-dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+[profile.bench]
+inherits = "release"

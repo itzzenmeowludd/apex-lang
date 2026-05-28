@@ -1,6 +1,27 @@
 [package]
 name = "apex-core"
-version = "0.2.0"
+version = "2.0.0"
 edition = "2021"
+authors = ["Apex Team"]
+description = "Core interpreter and runtime for the Apex programming language - A modern, expressive language with clean syntax and powerful features"
+repository = "https://github.com/apex-lang/apex"
+homepage = "https://apex-lang.org"
+documentation = "https://docs.apex-lang.org"
+license = "MIT"
+keywords = ["interpreter", "language", "compiler", "bytecode"]
+categories = ["compilers", "command-line-utilities"]
+
+[lib]
+name = "apex_core"
+path = "src/lib.rs"
 
 [dependencies]
+# No external dependencies - self-contained implementation
+
+[dev-dependencies]
+# For testing
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
