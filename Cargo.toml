@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "crates/apex-core",
+    "crates/apm",
+]
+resolver = "2"
